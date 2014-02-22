@@ -1,0 +1,13 @@
+
+<div class="board">
+<div>
+<%for i in 0..24 do %>
+  <% if i == 12 %>
+    <div class="square selected" id="cell<%=i%>">Free</div>
+  <% else %>
+    <% if i%5 == 0 && i != 0 %>
+      <%= "<div></div>" %>
+    <% end %>
+  <div class="square" id="cell<%=i%>"><%=@gbt[@rand_arr[i]]%></div>
+  <%end %>
+<%end%>
