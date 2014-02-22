@@ -6,10 +6,10 @@ class Client
       headers: { "Accept" => "application/json" })
     posts = response.body
     if response.code == 200
-      posts.each do |post|
-        # your code goes here!
-        puts post
-      end
+      # posts.each do |post|
+      #   # your code goes here!
+      #   puts post
+      # end
     else
       puts "Warning! There was an error with code #{response.code}"
     end
