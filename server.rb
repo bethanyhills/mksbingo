@@ -7,6 +7,7 @@ require 'json'
 require_relative 'lib/game_creator.rb'
 
 
+
 CLIENT_ID = ENV['GH_BASIC_CLIENT_ID']
 CLIENT_SECRET = ENV['GH_BASIC_SECRET_ID']
 
@@ -27,6 +28,9 @@ get '/callback' do
 
   # extract the token and granted scopes
   access_token = JSON.parse(result)['access_token']
+  # fetch user information
+  # auth_result = JSON.parse(RestClient.get('https://api.github.com/user', {:params => {:access_token => access_token}}))
+  #build board
   @dual_array =Game_Board.randomizer()
   @gbt = @dual_array[1]
   @rand_arr = @dual_array[0]

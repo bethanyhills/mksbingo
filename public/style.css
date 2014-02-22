@@ -40,6 +40,7 @@ width:70%;
 	border: 10px solid #3e3e3e;
 	background-color: #f7efec;
 	display: inline-block;
+	margin-bottom: 5px;
 }
 
 
@@ -63,4 +64,8 @@ width:70%;
 
 .selected {
 	background-color: #f4af4b;
+}
+
+.login {
+
 }
