@@ -24,9 +24,6 @@ class Client
   end
 end
 
-client = Client.new
-x = client.get_board
-p x
 
 class Game_Board
 
