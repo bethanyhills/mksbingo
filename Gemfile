@@ -4,4 +4,4 @@ gem 'sinatra'
 gem 'rspec'
 gem 'shotgun'
 gem 'foreman'
-
+gem 'unirest'
