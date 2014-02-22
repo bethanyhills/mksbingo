@@ -30,6 +30,7 @@ get '/callback' do
   @dual_array =Game_Board.randomizer()
   @gbt = @dual_array[1]
   @rand_arr = @dual_array[0]
+  @selected_arr = Game_Board.selected_spaces()
   erb :game_board
 end
 
