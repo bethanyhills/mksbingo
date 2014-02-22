@@ -1,3 +1,5 @@
+game_arr = []
+
 def randomizer(game_arr)
   rand_arr = []
   copy = game_arr
