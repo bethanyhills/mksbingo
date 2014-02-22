@@ -1,0 +1,60 @@
+.row {
+	max-width: 100% !important;
+}
+
+body {
+	background-color: #87bbd0;
+}
+
+#page {
+margin-left:auto;
+margin-right:auto;
+width:70%;
+}
+
+.header {
+	margin: 25px 0;
+	text-align: center;
+}
+
+.header p {
+	display: inline-block;
+	text-align: center;
+	font-family: 'FEDERICO'
+	font-style: italic;
+	font-size: 3em;
+	color: #f7efec;
+}
+
+table {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+td{
+	width: 100px;
+	height: 90px;
+	padding: 5px;
+	text-align: center;
+	border: 10px solid #3e3e3e;
+	background-color: #f7efec
+}
+
+
+#bingo {
+	height: 100px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 3em;
+	color: #f4af4b;
+	margin-left:auto;
+	margin-right:auto;
+	display: block;
+	text-align: center;
+	margin: 10px;
+}
+
+#bingo img {
+	height: 150px;
+	width: 150px;
+	padding: 25px;
+}
