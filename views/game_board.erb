@@ -11,6 +11,6 @@
   <div class="square<%=' selected' if @selected_arr[i]%>"
     id="cell<%=i%>">
     <%x=@rand_arr[i]%>
-    <%=@gbt[x]%></div>
+    <%=x.class!= String ? @gbt[x] : x%></div>
   <%end %>
 <%end%>

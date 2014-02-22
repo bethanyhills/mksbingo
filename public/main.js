@@ -8,6 +8,14 @@ $(document).ready(function() {
     }
   }
 
+  var dataRef = new Firebase('https://mksbingo.firebaseio.com/board');
+  var board_array = []
+  for(var i = 0; i < 25; i++){
+    board_array[i] = $("#cell"+i).text().replace("\n    \n    ","");
+  }
+  dataRef.set(board_array)
+
+
 
   $(".square").on("click", function(){
     $(this).addClass("selected");
