@@ -16,6 +16,7 @@ $(document).ready(function() {
     board_array[i] = $("#cell"+i).text().replace("\n    \n    ","");
     if($("#cell"+i).hasClass('selected')){
       selected_array[i] = true
+      gameSelections[i] = true
     } else {
       selected_array[i] = false
     }
