@@ -9,18 +9,27 @@ $(document).ready(function() {
   }
 
   var dataRef = new Firebase('https://mksbingo.firebaseio.com/board');
+  var dataRefSel = new Firebase('https://mksbingo.firebaseio.com/selected');
   var board_array = []
+  var selected_array = []
   for(var i = 0; i < 25; i++){
     board_array[i] = $("#cell"+i).text().replace("\n    \n    ","");
+    if($("#cell"+i).hasClass('selected')){
+      selected_array[i] = true
+    } else {
+      selected_array[i] = false
+    }
   }
   dataRef.set(board_array)
-
+  dataRefSel.set(selected_array)
 
 
   $(".square").on("click", function(){
     $(this).addClass("selected");
     var cellID = Number($(this).attr('id').replace("cell", ""));
     gameSelections[cellID]=true;
+    var dataRef = new Firebase('https://mksbingo.firebaseio.com/selected/'+cellID);
+    dataRef.set(true);
     checkGameWin();
   })
 
