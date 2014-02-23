@@ -32,22 +32,6 @@ $(document).ready(function() {
     location.reload()
   }
 
-  $("#reset").on('click',function(){
-    resetFunction();
-  })
-
-
-  $(".square").on("click", function(){
-    if{gameWin){
-      $(this).addClass("selected");
-      var cellID = Number($(this).attr('id').replace("cell", ""));
-      gameSelections[cellID]=true;
-      var dataRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/selected/'+cellID);
-      dataRef.set(true);
-      checkGameWin();
-    };
-  })
-
   var checkGameWin = function() {
       // horizontal win
     if(gameSelections[0]&&gameSelections[1]&&gameSelections[2]&&gameSelections[3]&&gameSelections[4] ||
@@ -81,6 +65,27 @@ $(document).ready(function() {
       var scoreboardRef = new Firebase('https://mksbingo.firebaseio.com/scoreboard/'+name);
       var gravatar = $("#grav").attr('src');
       scoreboardRef.set({"wins": wins, "img": gravatar})
+      gameWin = true;
     }
   }
+
+  checkGameWin();
+
+  $("#reset").on('click',function(){
+    resetFunction();
+  })
+
+
+  $(".square").on("click", function(){
+    if(gameWin == false){
+      $(this).addClass("selected");
+      var cellID = Number($(this).attr('id').replace("cell", ""));
+      gameSelections[cellID]=true;
+      var dataRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/selected/'+cellID);
+      dataRef.set(true);
+      checkGameWin();
+    };
+  })
+
+
 });
