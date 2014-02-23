@@ -62,7 +62,7 @@ class Game_Board
       "An Instructor Finds a Bug During a Lecture",
       "Algorithms. F*CK!",
       '"Let me explain" says Osei',
-      "What the HECK is This music?",
+      "What the HECK is This Music?",
       "Gene Saves the Day!",
       "It Works, but I Don't Know Why...",
       "Jessica Rocks Neon Jeans",
@@ -71,7 +71,7 @@ class Game_Board
       "A Flock of Five Ties",
       "DING DONG!",
       "Taylor Takes Attendance",
-      "Line for the microwave >= 4",
+      "Line for the Microwave >= 4",
       "Git Problems. All Day Errday.",
       "Clay Talks About Teach for America",
       "Code Breaks While Being a Show-Off"]
