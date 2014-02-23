@@ -1,0 +1,18 @@
+    <script type="text/javascript" src="main.js"></script>
+<div id="board" class="<%=@identity%>">
+<div>
+<%for i in 0..24 do %>
+  <% if i == 12 %>
+    <div class="square selected" id="cell<%=i%>"><p>Free</p></div>
+  <% else %>
+    <% if i%5 == 0 && i != 0 %>
+      <%= "<div></div>" %>
+    <% end %>
+  <div class="square<%=' selected' if @selected_arr[i]%>"
+    id="cell<%=i%>"><p>
+    <%x=@rand_arr[i]%>
+    <%=x.class!= String ? @gbt[x] : x%></p></div>
+  <%end %>
+<%end%>
+</div>
+

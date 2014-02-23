@@ -1,0 +1,9 @@
+# for files / gems created during bundle install
+/.bundle
+/vendor/bundle
+
+# for keeping our API keys off github
+.env
+
+# mac will generate these files when you go to a directory in finder. It is always a good thing to gitignore
+*.DS_Store

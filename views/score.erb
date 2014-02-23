@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Score</th>
+  </tr>
+  <% for i in 0...@names.length %>
+    <tr>
+      <td><img src="<%=@avatar_url[i]%>" class="gravatar" /><%=@names[i]%></td>
+      <td><%=@wins[i]%></td>
+    </tr>
+  <% end %>
+</table>
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Makersquare Bingo</title>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+		<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/foundation/5.1.1/css/foundation.min.css"/>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.0.3/jquery-2.0.3.js"></script>
+		<script type="text/javascript" src="suggestion.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<div id='container'>
+	<!-- topbar -->
+	<header>
+		<div class="row">
+			<div class="large-12 columns">
+				<nav class="top-bar" data-topbar>
+  				<section class="top-bar-section">
+  				<ul class="left">
+  					<% if @name %>
+		      	<li><a href="/callback"><img id="grav" class="wins<%=@wins%>" src="<%=@photo%>"><span id="name"><%=@name ? @name : "Player"%></span>'s Game</a></li>
+		      	<% else %>
+		      	<li><a href="/">Login</a></li>
+		      	<% end %>
+		      <li><a href="/scores">Scoreboard</a></li>
+		      <% if @gbt %>
+		      <li><a id="reset" href="#">Reset Game</a></li>
+		      <% end %>
+   			 </ul>
+   			 <ul class="right">
+   			 	 <li><input type='text'id='suggestion' placeholder='Have an idea for a Bingo tile?'/></li>
+		      	<li><a id="submit" href="#">Submit</a></li>
+   			 </ul>
+  	</section>
+				</nav>
+			</div>
+	</header>
+		<div id='page'>
+			<!-- headerline -->
+			<div class='header'>
+				<img src="http://www.themakersquare.com/assets/course/logo-4f4dc36c818dcccf4682e342b9c764b4.png">
+				<img src="images/mksbingo2.png"/>
+			</div>
+			<%= yield %>
+
+				<script>
+					console.log('<%=@name%>');
+				</script>
+			</div>
+			<img id="bingo" src="images/Button_Bingo.gif"/>
+	</body>
+</html>
