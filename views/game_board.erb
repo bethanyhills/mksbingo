@@ -1,5 +1,5 @@
-
-<div class="board">
+    <script type="text/javascript" src="main.js"></script>
+<div id="board" class="<%=@identity%>">
 <div>
 <%for i in 0..24 do %>
   <% if i == 12 %>
@@ -8,6 +8,9 @@
     <% if i%5 == 0 && i != 0 %>
       <%= "<div></div>" %>
     <% end %>
-  <div class="square" id="cell<%=i%>"><%=@gbt[@rand_arr[i]]%></div>
+  <div class="square<%=' selected' if @selected_arr[i]%>"
+    id="cell<%=i%>">
+    <%x=@rand_arr[i]%>
+    <%=x.class!= String ? @gbt[x] : x%></div>
   <%end %>
 <%end%>
