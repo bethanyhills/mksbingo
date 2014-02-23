@@ -12,6 +12,8 @@ CLIENT_ID = ENV['GH_BASIC_CLIENT_ID']
 CLIENT_SECRET = ENV['GH_BASIC_SECRET_ID']
 
 get '/' do
+  @name = session[:auth_result]['name'] if session[:auth_result]['name']
+  @photo = session[:auth_result]['avatar_url'] if session[:auth_result]['avatar_url']
   erb :index, :locals => {:client_id => CLIENT_ID}
 end
 
@@ -58,8 +60,8 @@ get '/scores' do
   @names = []
   @avatar_url = []
   @wins = []
-  @name = session[:auth_result]['name']
-  @photo = session[:auth_result]['avatar_url']
+  @name = session[:auth_result]['name'] if session[:auth_result]['name']
+  @photo = session[:auth_result]['avatar_url'] if session[:auth_result]['avatar_url']
   sorted_scores = scores.sort_by { |k,v| v["wins"] }
   sorted_scores.each do |element|
     @names << element.first
