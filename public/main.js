@@ -53,7 +53,7 @@ $(document).ready(function() {
       $("#bingo").animate({width: '209px', height: '211px', top: $("body").height() / 2 - $("#bingo").height() / 2
       }, 3000);
       setTimeout(function() {
-        $("#bingo").css('display', 'none');
+        resetFunction();
       }, 6000);
       var winRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/wins');
       var wins = Number($('#grav').attr("class").replace("wins","")) + 1;
