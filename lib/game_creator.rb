@@ -22,6 +22,17 @@ class Client
       return nil
     end
   end
+
+  def get_wins(key)
+    response = Unirest.get('https://mksbingo.firebaseio.com/'+key+'/wins.json',
+      headers: { "Accept" => "application/json" })
+    posts = response.body
+    if response.code == 200
+      return posts
+    else
+      return nil
+    end
+  end
 end
 
 
@@ -79,5 +90,14 @@ class Game_Board
       selected_arr[12] = true
     end
     return selected_arr
+  end
+
+  def self.wins(key)
+    client = Client.new
+    wins = client.get_wins(key)
+    unless wins
+      wins = 0
+    end
+    return wins
   end
 end

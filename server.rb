@@ -39,7 +39,7 @@ get '/callback' do
     access_token = session[:access_token]
   end
   @identity = access_token
-  
+  @wins = Game_Board.wins(@identity)
   @dual_array =Game_Board.randomizer(@identity)
   @gbt = @dual_array[1]
   @rand_arr = @dual_array[0]
