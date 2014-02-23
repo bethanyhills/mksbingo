@@ -26,6 +26,16 @@ $(document).ready(function() {
   dataRef.set(board_array)
   dataRefSel.set(selected_array)
 
+  var resetFunction = function() {
+    dataRef.remove()
+    dataRefSel.remove()
+    location.reload()
+  }
+
+  $("#reset").on('click',function(){
+    resetFunction();
+  })
+
 
   $(".square").on("click", function(){
     $(this).addClass("selected");
