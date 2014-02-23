@@ -65,8 +65,8 @@ get '/scores' do
   @wins = []
   @name = session[:auth_result]['name'] if session[:auth_result]
   @photo = session[:auth_result]['avatar_url'] if session[:auth_result]
-  sorted_scores = scores.sort_by { |k,v| v["wins"] }
-  sorted_scores.each do |element|
+  # sorted_scores = scores.sort_by { |k,v| v["wins"] }
+  scores.each do |element|
     @names << element.first
     @wins << element[1]["wins"]
     @avatar_url << element[1]["img"]
