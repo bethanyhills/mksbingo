@@ -91,3 +91,10 @@ body {
 .login img {
 	width: 75px;
 }
+
+table {
+	margin: 0 auto;
+}
+table img{
+	margin-right: 15px;
+}

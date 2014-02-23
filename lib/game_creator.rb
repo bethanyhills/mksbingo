@@ -33,6 +33,17 @@ class Client
       return nil
     end
   end
+
+  def get_scores()
+    response = Unirest.get('https://mksbingo.firebaseio.com/scoreboard.json',
+      headers: { "Accept" => "application/json" })
+    posts = response.body
+    if response.code == 200
+      return posts
+    else
+      return nil
+    end
+  end
 end
 
 
@@ -99,5 +110,10 @@ class Game_Board
       wins = 0
     end
     return wins
+  end
+
+  def self.scoreboard()
+    client = Client.new
+    scores = client.get_scores()
   end
 end

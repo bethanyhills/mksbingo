@@ -54,3 +54,16 @@ end
 get '/board/:key' do
 
 end
+
+get '/scores' do
+  @scores = Game_Board.scoreboard()
+  @names = []
+  @avatar_url = []
+  @wins = []
+  @scores.each do |name, prop|
+    @names << name
+    @wins << prop["wins"]
+    @avatar_url << prop["img"]
+  end
+  erb :score
+end
