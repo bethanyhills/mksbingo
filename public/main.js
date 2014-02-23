@@ -61,7 +61,13 @@ $(document).ready(function() {
       // diagonal wins
       gameSelections[0]&&gameSelections[6]&&gameSelections[12]&&gameSelections[18]&&gameSelections[24] ||
       gameSelections[4]&&gameSelections[8]&&gameSelections[12]&&gameSelections[16]&&gameSelections[20]) {
-      alert("You won!")
+      $("#bingo").css('display', 'block');
+      $("#bingo").css('left', $("body").width() / 2 - 105);
+      $("#bingo").animate({width: '209px', height: '211px', top: $("body").height() / 2 - $("#bingo").height() / 2
+      }, 3000);
+      setTimeout(function() {
+        $("#bingo").css('display', 'none');
+      }, 6000);
       var winRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/wins');
       var wins = Number($('#grav').attr("class").replace("wins","")) + 1;
       if(wins % 1 != 0) {

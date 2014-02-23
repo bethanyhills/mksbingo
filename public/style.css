@@ -102,3 +102,8 @@ table {
 table img{
 	margin-right: 15px;
 }
+
+#bingo {
+	display: none;
+	position: absolute;
+}
