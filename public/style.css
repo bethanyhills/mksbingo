@@ -29,11 +29,11 @@ width:70%;
  #board {
 	margin-left:auto;
 	margin-right:auto;
-	width: 520px !important;
+	width: 770px !important;
 }
 
 .square {
-	width: 100px;
+	width: 150px;
 	height: 90px;
 	padding: 5px;
 	text-align: center;
@@ -41,6 +41,11 @@ width:70%;
 	background-color: #f7efec;
 	display: inline-block;
 	margin-bottom: 5px;
+	font-size: 0.8em;
+	overflow:hidden;
+}
+.square p {
+	font-size: 1.1em;
 }
 
 

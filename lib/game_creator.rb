@@ -28,12 +28,36 @@ end
 class Game_Board
 
   def self.randomizer(key)
+    game_arr = ["Shehzan tells a 'great' joke",
+      "Whiteboard vs. Eraser Battle",
+      "A Makernap",
+      "A Dream Within a Dream",
+      "One of the Founding Four Holding a Beer",
+      "'It's Complicated' says Osei",
+      "Mike destroys a Vagrant Issue",
+      "Osei hands you a desert",
+      'A "Gilbert ... Pause"',
+      "An Instructor finds a bug during a Lecture",
+      "Algorithms. F*CK!",
+      '"Let me explain" says Osei',
+      "What the hell is this music",
+      "Gene saves the day!",
+      "It works, but I don't know how...",
+      "Jessica rocks neon jeans",
+      "Taaha mentions he isn't 21 yet",
+      "A Cali Mafia member mentions California",
+      "A flock of five ties",
+      "DING DONG!",
+      "Taylor Takes Attendance",
+      "Line for the microwave",
+      "Github Problems",
+      "Clay talks about Teach for America",
+      "Code doesn't work when showing it off"]
     client = Client.new
-    game_arr = []
     rand_arr = client.get_board(key)
     copy = []
     for i in 0..24 do
-      game_arr << i
+      game_arr[i] = i #Delete line for full functionality
       copy << i
     end
     if rand_arr == nil

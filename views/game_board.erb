@@ -9,8 +9,8 @@
       <%= "<div></div>" %>
     <% end %>
   <div class="square<%=' selected' if @selected_arr[i]%>"
-    id="cell<%=i%>">
+    id="cell<%=i%>"><p>
     <%x=@rand_arr[i]%>
-    <%=x.class!= String ? @gbt[x] : x%></div>
+    <%=x.class!= String ? @gbt[x] : x%></p></div>
   <%end %>
 <%end%>
