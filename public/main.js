@@ -7,9 +7,11 @@ $(document).ready(function() {
     $()
     }
   }
-
-  var dataRef = new Firebase('https://mksbingo.firebaseio.com/board');
-  var dataRefSel = new Firebase('https://mksbingo.firebaseio.com/selected');
+  var key = $("#board").attr('class');
+  console.log(key)
+  var dataRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/board');
+  dataRef.set("Hello")
+  var dataRefSel = new Firebase('https://mksbingo.firebaseio.com/'+key+'/selected');
   var board_array = []
   var selected_array = []
   for(var i = 0; i < 25; i++){
@@ -29,7 +31,7 @@ $(document).ready(function() {
     $(this).addClass("selected");
     var cellID = Number($(this).attr('id').replace("cell", ""));
     gameSelections[cellID]=true;
-    var dataRef = new Firebase('https://mksbingo.firebaseio.com/selected/'+cellID);
+    var dataRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/selected/'+cellID);
     dataRef.set(true);
     checkGameWin();
   })

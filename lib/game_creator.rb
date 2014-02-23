@@ -1,8 +1,8 @@
 require 'unirest'
 
 class Client
-  def get_board
-    response = Unirest.get('https://mksbingo.firebaseio.com/board.json',
+  def get_board(key)
+    response = Unirest.get('https://mksbingo.firebaseio.com/'+key+'/board.json',
       headers: { "Accept" => "application/json" })
     posts = response.body
     if response.code == 200 && posts != "null"
@@ -12,8 +12,8 @@ class Client
     end
   end
 
-  def get_selected
-    response = Unirest.get('https://mksbingo.firebaseio.com/selected.json',
+  def get_selected(key)
+    response = Unirest.get('https://mksbingo.firebaseio.com/'+key+'/selected.json',
       headers: { "Accept" => "application/json" })
     posts = response.body
     if response.code == 200
@@ -27,10 +27,10 @@ end
 
 class Game_Board
 
-  def self.randomizer()
+  def self.randomizer(key)
     client = Client.new
     game_arr = []
-    rand_arr = client.get_board
+    rand_arr = client.get_board(key)
     copy = []
     for i in 0..24 do
       game_arr << i
@@ -47,9 +47,9 @@ class Game_Board
     return [rand_arr, game_arr]
   end
 
-  def self.selected_spaces()
+  def self.selected_spaces(key)
     client = Client.new
-    selected_arr = client.get_selected
+    selected_arr = client.get_selected(key)
     if selected_arr == 'null'
       selected_arr = Array.new(25, false)
       selected_arr[12] = true
