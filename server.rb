@@ -56,14 +56,15 @@ get '/board/:key' do
 end
 
 get '/scores' do
-  @scores = Game_Board.scoreboard()
+  scores = Game_Board.scoreboard()
   @names = []
   @avatar_url = []
   @wins = []
-  @scores.each do |name, prop|
-    @names << name
-    @wins << prop["wins"]
-    @avatar_url << prop["img"]
+  sorted_scores = scores.sort_by { |k,v| v[:wins] }
+  sorted_scores.reverse_each do |element|
+    @names << element.first
+    @wins << element[1]["wins"]
+    @avatar_url << element[1]["img"]
   end
   erb :score
 end
