@@ -15,7 +15,7 @@
 				<nav class="top-bar" data-topbar>
   				<section class="top-bar-section">
   				<ul class="left">
-      <li><a href="#"><img id="grav" src="<%=@photo%>"><%=@name%>'s Game</a></li>
+      <li><a href="#"><img id="grav" class="wins<%=@wins%>" src="<%=@photo%>"><span id="name"><%=@name ? @name : "Player"%></span>'s Game</a></li>
        <li><a href="#">Scoreboard</a></li>
        <li><a id="reset" href="#">Reset</a></li>
     </ul>
