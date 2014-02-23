@@ -64,6 +64,9 @@ $(document).ready(function() {
       alert("You won!")
       var winRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/wins');
       var wins = Number($('#grav').attr("class").replace("wins","")) + 1;
+      if(wins % 1 != 0) {
+        wins = 1;
+      }
       winRef.set(wins);
       var name = $("#name").text();
       var scoreboardRef = new Firebase('https://mksbingo.firebaseio.com/scoreboard/'+name);
