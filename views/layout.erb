@@ -20,7 +20,9 @@
   				<ul class="left">
 		      <li><a href="/callback"><img id="grav" class="wins<%=@wins%>" src="<%=@photo%>"><span id="name"><%=@name ? @name : "Player"%></span>'s Game</a></li>
 		      <li><a href="/scores">Scoreboard</a></li>
-		      <li><a id="reset" href="#">Reset</a></li>
+		      <% if @gbt %>
+		      <li><a id="reset" href="#">Reset Game</a></li>
+		      <% end %>
    			 </ul>
    			 <ul class="right">
    			 	 <li><input type='text'id='suggestion' placeholder='Have an idea for a Bingo tile?'/></li>

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  var gameWin = false;
   var gameSelections = [];
   for(i=0;i<25;i++){
     gameSelections.push(false);
@@ -37,12 +38,14 @@ $(document).ready(function() {
 
 
   $(".square").on("click", function(){
-    $(this).addClass("selected");
-    var cellID = Number($(this).attr('id').replace("cell", ""));
-    gameSelections[cellID]=true;
-    var dataRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/selected/'+cellID);
-    dataRef.set(true);
-    checkGameWin();
+    if{gameWin){
+      $(this).addClass("selected");
+      var cellID = Number($(this).attr('id').replace("cell", ""));
+      gameSelections[cellID]=true;
+      var dataRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/selected/'+cellID);
+      dataRef.set(true);
+      checkGameWin();
+    };
   })
 
   var checkGameWin = function() {

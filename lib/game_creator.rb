@@ -79,7 +79,7 @@ class Game_Board
     rand_arr = client.get_board(key)
     copy = []
     for i in 0..24 do
-      # game_arr[i] = i #Delete line for full functionality
+      game_arr[i] = i #Delete line for full functionality
       copy << i
     end
     if rand_arr == nil
