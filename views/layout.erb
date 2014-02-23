@@ -18,7 +18,10 @@
 				<nav class="top-bar" data-topbar>
   				<section class="top-bar-section">
   				<ul class="left">
-		      <li><a href="/callback"><img id="grav" class="wins<%=@wins%>" src="<%=@photo%>"><span id="name"><%=@name ? @name : "Player"%></span>'s Game</a></li>
+  					<% if @name %>
+		      	<li><a href="/callback"><img id="grav" class="wins<%=@wins%>" src="<%=@photo%>"><span id="name"><%=@name ? @name : "Player"%></span>'s Game</a></li>
+		      	<% else %>
+		      	<li><a href="/">Login</a></li>
 		      <li><a href="/scores">Scoreboard</a></li>
 		      <% if @gbt %>
 		      <li><a id="reset" href="#">Reset Game</a></li>
