@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 	</head>
 	<body>
+		<div id='container'>
 	<img id="bingo" src="images/Button_Bingo.png"/>
 	<!-- topbar -->
 	<header>
@@ -17,11 +18,15 @@
 				<nav class="top-bar" data-topbar>
   				<section class="top-bar-section">
   				<ul class="left">
-      <li><a href="/callback"><img id="grav" class="wins<%=@wins%>" src="<%=@photo%>"><span id="name"><%=@name ? @name : "Player"%></span>'s Game</a></li>
-       <li><a href="/scores">Scoreboard</a></li>
-       <li><a id="reset" href="#">Reset</a></li>
-    </ul>
-  </section>
+		      <li><a href="/callback"><img id="grav" class="wins<%=@wins%>" src="<%=@photo%>"><span id="name"><%=@name ? @name : "Player"%></span>'s Game</a></li>
+		      <li><a href="/scores">Scoreboard</a></li>
+		      <li><a id="reset" href="#">Reset</a></li>
+   			 </ul>
+   			 <ul class="right">
+   			 	 <li><input type='text'id='suggestion' placeholder='Have an idea for a Bingo tile?'/></li>
+		      	<li><a id="submit" href="#">Submit</a></li>
+   			 </ul>
+  	</section>
 				</nav>
 			</div>
 	</header>
@@ -32,9 +37,10 @@
 				<img src="images/mksbingo2.png"/>
 			</div>
 			<%= yield %>
-				</div>
+				
 				<script>
 					console.log('<%=@name%>');
 				</script>
+			</div>
 	</body>
 </html>
