@@ -21,6 +21,9 @@ get '/callback' do
   unless session[:access_token]
     # get temporary GitHub code...
     session_code = request.env['rack.request.query_hash']['code']
+    unless session_code
+      redirect to("/")
+    end
 
     # ... and POST it back to GitHub
     result = RestClient.post('https://github.com/login/oauth/access_token',
