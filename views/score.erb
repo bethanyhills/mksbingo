@@ -5,7 +5,7 @@
   </tr>
   <% for i in 0...@names.length %>
     <tr>
-      <td><img src="<%=@avatar_url[i]%>" /><%=@names[i]%></td>
+      <td><img src="<%=@avatar_url[i]%>" class="gravatar" /><%=@names[i]%></td>
       <td><%=@wins[i]%></td>
     </tr>
   <% end %>

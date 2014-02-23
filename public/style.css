@@ -124,3 +124,7 @@ table img{
 	margin-right: auto;
 }
 
+gravatar {
+	width: 80px;
+	height: 80px;
+}
