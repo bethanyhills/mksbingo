@@ -39,14 +39,15 @@ get '/callback' do
     access_token = session[:access_token]
   end
   @identity = access_token
-  # push /board/@identity
-  # fetch user information
-  # auth_result = JSON.parse(RestClient.get('https://api.github.com/user', {:params => {:access_token => access_token}}))
-  #build board
+  
   @dual_array =Game_Board.randomizer(@identity)
   @gbt = @dual_array[1]
   @rand_arr = @dual_array[0]
   @selected_arr = Game_Board.selected_spaces(@identity)
+  #github info
+  @auth_result = JSON.parse(RestClient.get('https://api.github.com/user',{:params => {:access_token => access_token}}))
+  @name = @auth_result['name']
+  @photo = @auth_result['avatar_url']
   erb :game_board
 end
 
