@@ -40,7 +40,7 @@ class Game_Board
       "An Instructor finds a bug during a Lecture",
       "Algorithms. F*CK!",
       '"Let me explain" says Osei',
-      "What the hell is this music",
+      "What the hell is this music?",
       "Gene saves the day!",
       "It works, but I don't know how...",
       "Jessica rocks neon jeans",

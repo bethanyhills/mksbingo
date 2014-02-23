@@ -10,7 +10,6 @@ $(document).ready(function() {
   var key = $("#board").attr('class');
   console.log(key)
   var dataRef = new Firebase('https://mksbingo.firebaseio.com/'+key+'/board');
-  dataRef.set("Hello")
   var dataRefSel = new Firebase('https://mksbingo.firebaseio.com/'+key+'/selected');
   var board_array = []
   var selected_array = []
