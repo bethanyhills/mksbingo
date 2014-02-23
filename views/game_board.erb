@@ -3,7 +3,7 @@
 <div>
 <%for i in 0..24 do %>
   <% if i == 12 %>
-    <div class="square selected" id="cell<%=i%>">Free</div>
+    <div class="square selected" id="cell<%=i%>"><p>Free</p></div>
   <% else %>
     <% if i%5 == 0 && i != 0 %>
       <%= "<div></div>" %>
