@@ -12,7 +12,11 @@ CLIENT_ID = ENV['GH_BASIC_CLIENT_ID']
 CLIENT_SECRET = ENV['GH_BASIC_SECRET_ID']
 
 get '/' do
-  @name = session[:auth_result]['name'] if session[:auth_result]
+  if session[:auth_result]['name'] == ""
+    @name = session[:auth_result]['login']
+  else
+    @name = session[:auth_result]['name']
+  end
   @photo = session[:auth_result]['avatar_url'] if session[:auth_result]
   erb :index, :locals => {:client_id => CLIENT_ID}
 end
@@ -48,7 +52,11 @@ get '/callback' do
   @selected_arr = Game_Board.selected_spaces(@identity)
   #github info
   session[:auth_result] = JSON.parse(RestClient.get('https://api.github.com/user',{:params => {:access_token => @identity}}))
-  @name = session[:auth_result]['name']
+  if session[:auth_result]['name'] == ""
+    @name = session[:auth_result]['login']
+  else
+    @name = session[:auth_result]['name']
+  end
   @photo = session[:auth_result]['avatar_url']
   erb :game_board
 end
@@ -63,7 +71,13 @@ get '/scores' do
   @names = []
   @avatar_url = []
   @wins = []
-  @name = session[:auth_result]['name'] if session[:auth_result]
+  if session[:auth_result]
+    if session[:auth_result]['name'] == ""
+      @name = session[:auth_result]['login']
+    else
+      @name = session[:auth_result]['name']
+    end
+  end
   @photo = session[:auth_result]['avatar_url'] if session[:auth_result]
   # sorted_scores = scores.sort_by { |k,v| v["wins"] }
   scores.each do |element|
