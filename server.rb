@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'shotgun'
-require 'omniauth-twitter'
 require 'omniauth-github'
 require 'rest-client'
 require 'json'
